@@ -961,7 +961,8 @@ static void tcp_v4_reqsk_send_ack(struct sock *sk, struct sk_buff *skb,
 #ifdef CONFIG_LGP_DATA_TCPIP_MPTCP
 			tcp_rsk(req)->rcv_nxt, 0, req->rcv_wnd,
 #else
-			tcp_rsk(req)->rcv_nxt, req->rcv_wnd,
+			tcp_rsk(req)->rcv_nxt,
+			req->rcv_wnd >> inet_rsk(req)->rcv_wscale,
 #endif
 			tcp_time_stamp,
 			req->ts_recent,
