@@ -643,6 +643,13 @@ config KERNEL_TEXT_MPU_PROT
 	  all masters; Write access is only permited to the
 	  secure world.
 
+config THUNDERPLUG_CONTROL
+	bool "Enable plugging down/up of cores based on load per core"
+	depends on SMP && HOTPLUG_CPU
+	default y
+	help
+	  This driver hotplugs cpu cores based on per-core load
+
 source "drivers/soc/qcom/memshare/Kconfig"
 
 source "drivers/soc/qcom/lge/Kconfig"
