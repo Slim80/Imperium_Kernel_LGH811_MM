@@ -625,7 +625,7 @@ static void update_frequency_portion(struct frqinfo *info, bool gov)
 
 	info->litime = curr_time;
 	elapsed = curr_time - info->sitime;
-	if(elapsed > info->intv ) {
+	if(elapsed > info->intv) {
 		update_params(info, curr_time);
 		decide_policy(info);
 		info->sitime = 0;
@@ -640,12 +640,10 @@ static void stack_normalize(struct work_struct *work)
 			struct frqinfo, delayed_freq_normalizer.work);
 	update_frequency_portion(info, false);
 	update_state_machine(info, false);
-
 	if(info->en)
 	queue_delayed_work_on(0, info->freq_mon,
 			&info->delayed_freq_normalizer,
 			usecs_to_jiffies(500 * 1000));
-
 	return;
 }
 
@@ -671,7 +669,6 @@ int stack(int cpu, int freq)
 	info.cluster = check_cluster(cpu);
 	target = (!info.cluster) ? &info.llast : &info.blast;
 	*target = freq;
-
 	update_frequencies(&info);
 	update_frequency_portion(&info, true);
 	return 0;
