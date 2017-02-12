@@ -1453,7 +1453,7 @@ temp_crit_show(struct device *dev, struct device_attribute *attr,
 	int ret;
 
 #ifdef CONFIG_LGE_PM
-	ret = tz->ops->get_crit_temp(tz,&temperature);
+	ret = tz->ops->get_crit_temp(tz, &temperature);
 #else
 	ret = tz->ops->get_trip_temp(tz, 0, &temperature);
 #endif
