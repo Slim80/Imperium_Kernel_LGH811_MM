@@ -190,82 +190,6 @@ int snd_hax_reg_access(unsigned int reg)
 }
 EXPORT_SYMBOL(snd_hax_reg_access);
 
-static ssize_t cam_mic_gain_show(struct kobject *kobj,
-		struct kobj_attribute *attr, char *buf)
-{
-        return sprintf(buf, "%u\n",
-		tomtom_read(fauxsound_codec_ptr,
-			TOMTOM_A_CDC_TX7_VOL_CTL_GAIN));
-
-}
-
-static ssize_t cam_mic_gain_store(struct kobject *kobj,
-		struct kobj_attribute *attr, const char *buf, size_t count)
-{
-	unsigned int lval;
-
-	sscanf(buf, "%u", &lval);
-
-	snd_ctrl_locked = 0;
-	tomtom_write(fauxsound_codec_ptr,
-		TOMTOM_A_CDC_TX7_VOL_CTL_GAIN, lval);
-	snd_ctrl_locked = 2;
-
-	return count;
-}
-
-static ssize_t mic_gain_show(struct kobject *kobj,
-		struct kobj_attribute *attr, char *buf)
-{
-	return sprintf(buf, "%u\n",
-		tomtom_read(fauxsound_codec_ptr,
-			TOMTOM_A_CDC_TX6_VOL_CTL_GAIN));
-}
-
-static ssize_t mic_gain_store(struct kobject *kobj,
-		struct kobj_attribute *attr, const char *buf, size_t count)
-{
-	unsigned int lval;
-
-	sscanf(buf, "%u", &lval);
-
-	snd_ctrl_locked = 0;
-	tomtom_write(fauxsound_codec_ptr,
-		TOMTOM_A_CDC_TX6_VOL_CTL_GAIN, lval);
-	snd_ctrl_locked = 2;
-
-	return count;
-
-}
-
-static ssize_t speaker_gain_show(struct kobject *kobj,
-		struct kobj_attribute *attr, char *buf)
-{
-        return sprintf(buf, "%u %u\n",
-			tomtom_read(fauxsound_codec_ptr,
-				TOMTOM_A_CDC_RX6_VOL_CTL_B2_CTL),
-			tomtom_read(fauxsound_codec_ptr,
-				TOMTOM_A_CDC_RX7_VOL_CTL_B2_CTL));
-
-}
-
-static ssize_t speaker_gain_store(struct kobject *kobj,
-		struct kobj_attribute *attr, const char *buf, size_t count)
-{
-	unsigned int lval, rval;
-
-	sscanf(buf, "%u %u", &lval, &rval);
-
-	snd_ctrl_locked = 0;
-	tomtom_write(fauxsound_codec_ptr,
-				TOMTOM_A_CDC_RX6_VOL_CTL_B2_CTL, lval);
-	tomtom_write(fauxsound_codec_ptr,
-                TOMTOM_A_CDC_RX7_VOL_CTL_B2_CTL, rval);
-	snd_ctrl_locked = 2;
-
-	return count;
-}
-
 static ssize_t headphone_gain_show(struct kobject *kobj,
 		struct kobj_attribute *attr, char *buf)
 {
@@ -344,24 +268,6 @@ static struct kobj_attribute sound_reg_write_attribute =
 		NULL,
 		sound_reg_write_store);
 
-static struct kobj_attribute cam_mic_gain_attribute =
-	__ATTR(gpl_cam_mic_gain,
-		0666,
-		cam_mic_gain_show,
-		cam_mic_gain_store);
-
-static struct kobj_attribute mic_gain_attribute =
-	__ATTR(gpl_mic_gain,
-		0666,
-		mic_gain_show,
-		mic_gain_store);
-
-static struct kobj_attribute speaker_gain_attribute =
-	__ATTR(gpl_speaker_gain,
-		0666,
-		speaker_gain_show,
-		speaker_gain_store);
-
 static struct kobj_attribute headphone_gain_attribute =
 	__ATTR(gpl_headphone_gain,
 		0666,
@@ -370,9 +276,6 @@ static struct kobj_attribute headphone_gain_attribute =
 
 static struct attribute *sound_control_attrs[] =
 	{
-		&cam_mic_gain_attribute.attr,
-		&mic_gain_attribute.attr,
-		&speaker_gain_attribute.attr,
 		&headphone_gain_attribute.attr,
 		&sound_reg_sel_attribute.attr,
 		&sound_reg_read_attribute.attr,
@@ -421,3 +324,4 @@ module_exit(sound_control_exit);
 MODULE_LICENSE("GPL and additional rights");
 MODULE_AUTHOR("Paul Reioux <reioux@gmail.com>");
 MODULE_DESCRIPTION("Sound Control Module 3.x");
+
