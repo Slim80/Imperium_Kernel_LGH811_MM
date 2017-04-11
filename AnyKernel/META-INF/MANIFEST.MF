@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+
+Name: META-INF/com/google/android/updater-script
+SHA1-Digest: surH1Bs4hR30JclyYkFBB7d7164=
+
+Name: Image.gz-dtb
+SHA1-Digest: /O+DGNVNqGggDyYMkSsOYe9zQJ0=
+
+Name: anykernel.sh
+SHA1-Digest: zmk/EprO6wxAUj6gPjHbhml3tlk=
+
+Name: META-INF/com/google/android/update-binary
+SHA1-Digest: 6tAk1mzbgVwpLAqNKsbzPe0jvss=
+
+Name: ramdisk/init.fk.rc
+SHA1-Digest: 4Zmtkqp+GTdadIM7Nc2nuySMLlc=
+
+Name: tools/busybox
+SHA1-Digest: U5NqL3IYf9g4MPdl3gDQF6B7VJw=
+
+Name: ramdisk/init.special_power.sh
+SHA1-Digest: Uh7kBKkg8QpQLCRrVzxYse/fwMs=
+
+Name: ramdisk/init.performance_profiles.rc
+SHA1-Digest: iBOeRsN39D6rYKv7CIUiyP31to0=
+
+Name: tools/mkbootimg
+SHA1-Digest: To1VS+f//iWa9UwkPl2jCes0ErA=
+
+Name: tools/unpackbootimg
+SHA1-Digest: Nkmx7/FxYyQl07Q5zwBjt4w2cAU=
+
+Name: ramdisk/init.supolicy.sh
+SHA1-Digest: 0h8mjmmIOJc62EgbJfagixIHOCE=
+
+Name: tools/ak2-core.sh
+SHA1-Digest: C49tecYqk9JVFmie4EvQP90hxqU=
+
+Name: tools/mkbootfs
+SHA1-Digest: YsQGoJcxjgl1mtUGOCPIlH0dXFA=
+

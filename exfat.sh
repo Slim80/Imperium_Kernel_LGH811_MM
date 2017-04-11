@@ -4,13 +4,13 @@ export PARENT_DIR=`readlink -f ..`
 export ARCH=arm64
 export SUBARCH=arm64
 export PATH=/home/slim80/Scrivania/Kernel/Compilatori/aarch64-linux-android-4.9/bin:$PATH
-# export PATH=/home/slim80/Scrivania/Kernel/Compilatori/UBERTC-aarch64-linux-android-4.9-kernel/bin:$PATH
 export CROSS_COMPILE=aarch64-linux-android-
 
 IMPERIUM="/home/slim80/Scrivania/Kernel/LG/Imperium"
 EXFAT="/home/slim80/Scrivania/Kernel/LG/Imperium/exfat"
 KERNELDIR="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811"
-BUILDEDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/1_Imperium"
+BUILDEDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Builded_Kernel"
+ANYKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/AnyKernel"
 
 rm -f $BUILDEDKERNEL/Builded_Kernel/system/lib/modules/texfat.ko
 cp -f tuxera_update.sh $IMPERIUM
@@ -32,7 +32,7 @@ tar -xzf tuxera-exfat*.tgz
 cp tuxera-exfat*/exfat/kernel-module/texfat.ko $EXFAT/out/system/lib/modules/
 cp tuxera-exfat*/exfat/tools/* $EXFAT/out/
 perl ./scripts/sign-file sha1 $EXFAT/sign/signing_key.priv $EXFAT/sign/signing_key.x509 $EXFAT/out/system/lib/modules/texfat.ko
-cp $EXFAT/out/system/lib/modules/texfat.ko $BUILDEDKERNEL/Builded_Kernel/system/lib/modules/
+cp $EXFAT/out/system/lib/modules/texfat.ko $ANYKERNEL/modules/
 rm -f kheaders*.tar.bz2
 rm -f tuxera-exfat*.tgz
 rm -rf tuxera-exfat*
