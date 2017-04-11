@@ -5,7 +5,7 @@
 # begin properties
 properties() {
 kernel.string=Imperium-Kernel by Slim80 @xda-developers
-do.devicecheck=1
+do.devicecheck=0
 do.initd=0
 do.modules=1
 do.cleanup=1
