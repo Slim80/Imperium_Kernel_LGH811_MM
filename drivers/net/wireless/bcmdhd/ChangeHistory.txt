@@ -63,5 +63,15 @@ DHD 1.201.54.11 (2016.06.24)
 DHD 1.201.54.12 (2016.09.08)
   - Google Security patch CVE-2016-3869 (CSP#1086098)
   
-DHD 1.201.54.12 (2016.12.16)
+DHD 1.201.54.13 (2016.12.16)
   - Google Security patch CVE-2016-3869 (CSP#1114036,  1104030, 1104026, 1104023)
+  
+DHD 1.201.54.14 (Not released)  
+ - CSP:1120247 Google Security patch A-32838767
+ - Google Security patch - ANDROID-32124445
+ - Google Security patch CVE-2017-0430
+ - Google Security patches - V2016122201, V2016122901, V2016122902
+ 
+DHD 1.201.54.15 - 2017.02.15
+  - CSP:1120247 Google Security patch A-32838767 (Build error fixed)
+

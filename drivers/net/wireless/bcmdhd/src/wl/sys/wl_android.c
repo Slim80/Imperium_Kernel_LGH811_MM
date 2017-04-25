@@ -1,7 +1,7 @@
 /*
  * Linux cfg80211 driver - Android related functions
  *
- * Copyright (C) 1999-2016, Broadcom Corporation
+ * Copyright (C) 1999-2017, Broadcom Corporation
  * 
  *      Unless you and Broadcom execute a separate written software license
  * agreement governing use of this software, this software is licensed to you
@@ -21,7 +21,7 @@
  * software in any way with any other Broadcom software provided under a license
  * other than the GPL, without Broadcom's express prior written consent.
  *
- * $Id: wl_android.c 675336 2016-12-15 08:58:07Z $
+ * $Id: wl_android.c 684926 2017-02-15 02:00:38Z $
  */
 
 #include <linux/module.h>
@@ -1607,7 +1607,7 @@ static int wl_android_set_pno_setup(struct net_device *dev, char *command, int t
 		str_ptr += sizeof(cmd_tlv_t);
 		tlv_size_left -= sizeof(cmd_tlv_t);
 
-		if ((nssid = wl_iw_parse_ssid_list_tlv(&str_ptr, ssids_local,
+		if ((nssid = wl_parse_ssid_list_tlv(&str_ptr, ssids_local,
 			MAX_PFN_LIST_COUNT, &tlv_size_left)) <= 0) {
 			DHD_ERROR(("SSID is not presented or corrupted ret=%d\n", nssid));
 			goto exit_proc;
