@@ -14,7 +14,7 @@ BUILDEDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Builded_Kernel"
 IMAGE="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/arch/arm64/boot"
 ANYKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/AnyKernel"
 NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
-VERSION=6.9a
+VERSION=7.0
 
 find -name '*.gz*' -exec rm -rf {} \;
 find -name '*.dtb' -exec rm -rf {} \;
