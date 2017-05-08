@@ -30,5 +30,3 @@ on property:sys.boot_completed=1
     exec u:r:init:s0 root root -- /init.special_power.sh
     exec u:r:supersu:s0 root root -- /init.supolicy.sh
     exec u:r:supersu:s0 root root -- /init.special_power.sh
-
-

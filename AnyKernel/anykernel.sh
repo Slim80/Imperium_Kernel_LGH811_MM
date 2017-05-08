@@ -18,7 +18,6 @@ device.name3=LG G4
 block=/dev/block/bootdevice/by-name/boot;
 is_slot_device=0;
 
-## end setup
 
 # import patching functions/variables - see for reference
 . /tmp/anykernel/tools/ak2-core.sh;
