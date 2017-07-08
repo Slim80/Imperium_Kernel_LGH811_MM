@@ -15,7 +15,7 @@ FINALKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Final_Kernel"
 IMAGE="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/arch/arm64/boot"
 ANYKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/AnyKernel"
 NUM_CPUS=`grep -c ^processor /proc/cpuinfo`
-VERSION=7.0
+VERSION=7.1
 
 rm -f arch/arm64/boot/*.cmd
 rm -f arch/arm64/boot/dts/*.cmd
