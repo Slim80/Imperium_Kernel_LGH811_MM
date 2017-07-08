@@ -10,7 +10,8 @@ export KCONFIG_NOTIMESTAMP=true
 
 IMPERIUM="/home/slim80/Scrivania/Kernel/LG/Imperium"
 KERNELDIR="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811"
-BUILDEDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Builded_Kernel"
+BUILDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Build_Kernel"
+FINALKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Final_Kernel"
 IMAGE="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/arch/arm64/boot"
 ANYKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/AnyKernel"
 
@@ -24,6 +25,8 @@ find -name '*.ko' -exec rm -rf {} \;
 rm -f dt.img
 rm -rf $ANYKERNEL/zImage
 rm -rf $ANYKERNEL/dt.img
+rm -rf $BUILDKERNEL/Slim80/kernel/*
+rm -rf $BUILDKERNEL/system/lib/modules/*
 
 make clean
 make distclean
