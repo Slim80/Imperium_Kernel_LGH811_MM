@@ -46,8 +46,6 @@ mkdir -p imperium_install
 make ARCH=arm64 CROSS_COMPILE=${CROSS_COMPILE} -j4 INSTALL_MOD_PATH=imperium_install INSTALL_MOD_STRIP=1 modules_install
 find imperium_install/ -name '*.ko' -type f -exec cp '{}' $ANYKERNEL/modules/ \;
 
-sh ./exfat.sh
-
 cd $ANYKERNEL
 zip -r ../../Builded_Kernel/Imperium_Kernel_G4_H811_v$VERSION.zip .
 
