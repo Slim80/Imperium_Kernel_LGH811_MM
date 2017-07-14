@@ -10,10 +10,10 @@ export KCONFIG_NOTIMESTAMP=true
 
 IMPERIUM="/home/slim80/Scrivania/Kernel/LG/Imperium"
 KERNELDIR="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811"
-BUILDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Build_Kernel"
+BUILDKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Build_Kernel_H811"
 FINALKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Final_Kernel"
 IMAGE="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/arch/arm64/boot"
-ANYKERNEL="/home/slim80/Scrivania/Kernel/LG/Imperium/Imperium_Kernel_H811/AnyKernel"
+RAMFS="/home/slim80/Scrivania/Kernel/LG/Imperium/ramfs_imperium_H811"
 
 rm -f arch/arm64/boot/*.cmd
 rm -f arch/arm64/boot/dts/*.cmd
@@ -23,10 +23,10 @@ find -name '*.gz*' -exec rm -rf {} \;
 find -name '*.dtb' -exec rm -rf {} \;
 find -name '*.ko' -exec rm -rf {} \;
 rm -f dt.img
-rm -rf $ANYKERNEL/zImage
-rm -rf $ANYKERNEL/dt.img
-rm -rf $BUILDKERNEL/Slim80/kernel/*
-rm -rf $BUILDKERNEL/system/lib/modules/*
+rm -f $BUILDKERNEL/boot.img
+rm -f $BUILDKERNEL/system/lib/modules/*
+rm -f $RAMFS/ramfs_imperium_H811.cpio.gz
+rm -f $KERNELDIR/ramfs_imperium_H811.cpio.gz
 
 make clean
 make distclean
