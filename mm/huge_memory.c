@@ -1293,7 +1293,6 @@ struct page *follow_trans_huge_pmd(struct vm_area_struct *vma,
 	if (flags & FOLL_GET)
 		get_page_foll(page);
 
-out:
 	return page;
 }
 
